@@ -12,19 +12,19 @@ export const getSalesLeads =
     res: Response
   ) => {
     try {
-      // Get all borrowers
+  
       const borrowers =
         await User.find({
           role: Role.BORROWER,
         });
 
-      // Get borrower IDs who already applied
+  
       const appliedLoanBorrowers =
         await Loan.distinct(
           "borrowerId"
         );
 
-      // Filter borrowers who haven't applied
+      
       const leads = borrowers.filter(
         (borrower) =>
           !appliedLoanBorrowers.some(

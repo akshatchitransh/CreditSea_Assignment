@@ -3,7 +3,7 @@ import Loan from "../models/Loan.js";
 
 import BorrowerProfile, {
   EmploymentMode,
-} from "../models/BorrowerProfile.js";
+} from ""../models/BorrowerProfile.js";
 
 import { validateBRE } from "../services/bre.service.js";
 
@@ -22,7 +22,7 @@ export const createBorrowerProfile = async (
 
     const user = (req as any).user;
 
-    // Check if profile already exists
+   
     const existingProfile =
       await BorrowerProfile.findOne({
         userId: user.userId,
@@ -35,7 +35,7 @@ export const createBorrowerProfile = async (
       });
     }
 
-    // Run BRE Validation
+  
     const breResult = validateBRE({
       dob,
       monthlySalary,
@@ -43,7 +43,7 @@ export const createBorrowerProfile = async (
       employmentMode,
     });
 
-    // Reject if BRE fails
+    
     if (!breResult.passed) {
       return res.status(400).json({
         message: "BRE validation failed",
@@ -52,7 +52,7 @@ export const createBorrowerProfile = async (
       });
     }
 
-    // Save borrower profile
+  
     const borrowerProfile =
       await BorrowerProfile.create({
         userId: user.userId,

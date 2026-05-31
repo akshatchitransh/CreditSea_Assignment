@@ -24,7 +24,7 @@ export const repayLoan = async (
       utrNumber,
     } = req.body;
 
-    // FIND LOAN
+    
     const loan = await Loan.findById(
       loanId
     );
@@ -36,7 +36,7 @@ export const repayLoan = async (
       });
     }
 
-    // DUPLICATE UTR CHECK
+    
     const existingUTR =
       await Repayment.findOne({
         utrNumber,
@@ -50,7 +50,7 @@ export const repayLoan = async (
       });
     }
 
-    // INVALID AMOUNT
+    
     if (amount <= 0) {
 
       return res.status(400).json({
@@ -59,7 +59,7 @@ export const repayLoan = async (
       });
     }
 
-    // CREATE REPAYMENT
+    
     const repayment =
       await Repayment.create({
         loan: loan._id,
@@ -68,16 +68,16 @@ export const repayLoan = async (
         utrNumber,
       });
 
-    // UPDATE PAID AMOUNT
+  
     loan.totalPaid =
       (loan.totalPaid || 0) + amount;
 
-    // OUTSTANDING
+    
     const outstanding =
       loan.totalRepayment -
       loan.totalPaid;
 
-    // AUTO CLOSE
+    
     if (outstanding <= 0) {
 
       loan.status = LoanStatus.CLOSED;
