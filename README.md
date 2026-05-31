@@ -459,7 +459,7 @@ JWT_SECRET=your_secret
 ## Frontend `.env.local`
 
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+NEXT_PUBLIC_API_URL=(https://creditsea-backend-r4po.onrender.com/)
 ```
 
 ---
@@ -496,7 +496,7 @@ npm run dev
 Backend runs on:
 
 ```txt
-http://localhost:5000
+https://creditsea-backend-r4po.onrender.com/
 ```
 
 ---
@@ -523,7 +523,7 @@ npm run dev
 Frontend runs on:
 
 ```txt
-http://localhost:3000
+(https://creditsea-frontend-delta.vercel.app/)
 ```
 
 ---
