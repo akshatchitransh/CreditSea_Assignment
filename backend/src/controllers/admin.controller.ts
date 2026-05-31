@@ -43,7 +43,7 @@ export const getDashboardStats =
             LoanStatus.REJECTED,
         });
 
-      // Total disbursed amount
+      
       const disbursedAmountResult =
         await Loan.aggregate([
           {

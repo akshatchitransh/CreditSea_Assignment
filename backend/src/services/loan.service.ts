@@ -5,7 +5,6 @@ export const calculateLoanDetails = (
 ) => {
   const interestRate = 12;
 
-  // Simple Interest
   const interest =
     (principal *
       interestRate *

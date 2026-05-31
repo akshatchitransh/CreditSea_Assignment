@@ -13,14 +13,14 @@ interface BREInput {
 export const validateBRE = (data: BREInput) => {
   const errors: string[] = [];
 
-  // PAN REGEX
+ 
   const panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
   if (!panRegex.test(data.pan)) {
     errors.push("Invalid PAN format");
   }
 
-  // AGE VALIDATION
+  
   const today = new Date();
 
   const birthDate = new Date(data.dob);
@@ -44,14 +44,14 @@ export const validateBRE = (data: BREInput) => {
     );
   }
 
-  // SALARY CHECK
+  
   if (data.monthlySalary < 25000) {
     errors.push(
       "Monthly salary must be at least 25000"
     );
   }
 
-  // EMPLOYMENT CHECK
+  
   if (
     data.employmentMode ===
     EmploymentMode.UNEMPLOYED
