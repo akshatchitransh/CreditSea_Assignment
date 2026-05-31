@@ -675,3 +675,14 @@ A full-stack fintech workflow implementation demonstrating:
 * backend validations
 * responsive UI/UX
 * enterprise loan lifecycle management
+
+* ## 🌐 Live Demo
+Frontend:
+https://your-vercel-url.vercel.app
+
+Backend:
+https://your-render-url.onrender.com
+
+## 🎥 Demo Video
+
+[Watch Full Project Demo](https://drive.google.com/file/d/1t357iXaZdaLa-K1vQQlbewTCywiu-gG5/view?usp=drivesdk)
